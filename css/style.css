@@ -1,0 +1,21 @@
+body {
+    background-color: #daeaf6;
+}
+
+nav {
+    background-color: #fce1e4;
+    margin: 2%;
+}
+
+#nav-button {
+    font-size: 300%;
+    padding: 2%;
+}
+
+.container {
+    padding: 5% 0% 10%;
+}
+
+footer {
+    margin: 0% 0% 5%;
+}
