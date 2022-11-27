@@ -3,14 +3,14 @@ const doc = this.document ;
 var loggedIn = false;
 
 function getNavbar() {
-    const home = `<a class="navbar-brand text-white" id="nav-button" href="index.html">Lolla B-Day Wishlist</a>`
+    const home = `<a class="navbar-brand text-white" id="nav-button" href="javascript:showProductHouses()">Lolla B-Day Wishlist</a>`
     var navText;
     if (loggedIn) {
         navText =  "Logout"
     } else {
         navText = "Login"
     }
-    var logIn = `<a class="navbar-brand text-white text-right" id="nav-button" href="html/login.html">${navText}</a>`
+    var logIn = `<a class="navbar-brand text-white text-right" id="nav-button" href="">${navText}</a>`
 
     return home + logIn
 }
@@ -72,7 +72,7 @@ function getProductHouses() {
         productHousesDiv += `
             <div class="col-sm text-center text-white" style="margin: 1%;">
                 <figure class="figure">
-                    <a onclick="showProducts('${productHouse['name']}')">
+                    <a href="javascript:showProducts('${productHouse['name']}')">
                         <img class="rounded-circle" src="img/${productHouse['img']}" height="300px", width="300px">
                     </a>
                 </figure>
@@ -134,8 +134,11 @@ function showProducts(productHouseName) {
     document.getElementById("container").innerHTML = getProducts(productHouseName);
 }
 
+function showProductHouses() {
+    document.getElementById("container").innerHTML = getProductHouses();
+}
+
 window.addEventListener('load', (event) => {
     document.getElementById("nav-bar").innerHTML = getNavbar();
-
-    document.getElementById("container").innerHTML = getProductHouses();
+    showProductHouses();
 });
